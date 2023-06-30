@@ -9,6 +9,7 @@ import {
   TrashIcon,
   RecycleIcon,
 } from '@/components/shared/icons';
+import { toastOptions } from '@/config/setting';
 
 function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -83,18 +84,7 @@ function Home() {
     }
 
     // Toast message
-    toast(message, {
-      position: 'top-right',
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: 'light',
-      closeButton: false,
-      type: toastType,
-    });
+    toast(message, toastOptions(toastType));
 
     // Fetch data notes
     fetchData();

@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
 import MetaHead from '@/components/shared/meta-head';
 import { timeNow } from '@/components/helpers/function';
+import { toastOptions } from '@/config/setting';
 
 function CreateNote() {
   const router = useRouter();
@@ -56,18 +57,7 @@ function CreateNote() {
     localStorage.setItem('dataNotes', JSON.stringify(dataNotes));
 
     // Toast message
-    toast('Note updated', {
-      position: 'top-right',
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: 'light',
-      closeButton: false,
-      type: 'success',
-    });
+    toast('Note updated', toastOptions('success'));
 
     // Redirect to home
     router.push('/');
