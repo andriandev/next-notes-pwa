@@ -5,6 +5,7 @@
       "@/components/*": ["apps/components/*"],
       "@/layout/*": ["apps/components/layout/*"],
       "@/config/*": ["apps/config/*"],
+      "@/context/*": ["apps/context/*"],
       "@/helpers/*": ["apps/helpers/*"]
     }
   }

@@ -1,6 +1,7 @@
 // import { useEffect } from 'react';
 import Layout from '@/layout/main';
 import { Poppins } from 'next/font/google';
+import { NotesProvider } from '@/context/notes-context';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'react-toastify/dist/ReactToastify.css';
 import '../styles/globals.css';
@@ -18,14 +19,16 @@ function MyApp({ Component, pageProps }) {
   // }, []);
 
   return (
-    <Layout>
-      <style jsx global>{`
-        html {
-          font-family: ${poppins.style.fontFamily};
-        }
-      `}</style>
-      <Component {...pageProps} />
-    </Layout>
+    <NotesProvider>
+      <Layout>
+        <style jsx global>{`
+          html {
+            font-family: ${poppins.style.fontFamily};
+          }
+        `}</style>
+        <Component {...pageProps} />
+      </Layout>
+    </NotesProvider>
   );
 }
 
